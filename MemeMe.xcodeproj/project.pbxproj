@@ -13,6 +13,7 @@
 		FD5D944925A5859300D83DF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5D944725A5859300D83DF6 /* Main.storyboard */; };
 		FD5D944B25A5859700D83DF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD5D944A25A5859700D83DF6 /* Assets.xcassets */; };
 		FD5D944E25A5859700D83DF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5D944C25A5859700D83DF6 /* LaunchScreen.storyboard */; };
+		FDAD92B525C31C0D005E8C79 /* MeMeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAD92B425C31C0C005E8C79 /* MeMeStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FD5D944A25A5859700D83DF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD5D944D25A5859700D83DF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD5D944F25A5859700D83DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDAD92B425C31C0C005E8C79 /* MeMeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeMeStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				FD5D944125A5859300D83DF6 /* AppDelegate.swift */,
+				FDAD92B425C31C0C005E8C79 /* MeMeStruct.swift */,
 				FD5D944325A5859300D83DF6 /* SceneDelegate.swift */,
 				FD5D944525A5859300D83DF6 /* ViewController.swift */,
 				FD5D944725A5859300D83DF6 /* Main.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDAD92B525C31C0D005E8C79 /* MeMeStruct.swift in Sources */,
 				FD5D944625A5859300D83DF6 /* ViewController.swift in Sources */,
 				FD5D944225A5859300D83DF6 /* AppDelegate.swift in Sources */,
 				FD5D944425A5859300D83DF6 /* SceneDelegate.swift in Sources */,
@@ -287,13 +291,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 29LF35B2Y8;
+				DEVELOPMENT_TEAM = 2SJN2S9MEN;
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hwys.MemeMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hwys.mememe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -306,13 +310,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 29LF35B2Y8;
+				DEVELOPMENT_TEAM = 2SJN2S9MEN;
 				INFOPLIST_FILE = MemeMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hwys.MemeMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hwys.mememe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
