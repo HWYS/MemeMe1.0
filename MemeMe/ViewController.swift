@@ -32,8 +32,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        shareButton.isEnabled = false
-        cancelButton.isEnabled = false
+        goToInitialUIState()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,7 +92,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.text == "TOP" || textField.text == "BOTTOM"{
-           textField.text = ""
+            textField.text = ""
             
         }
     }
@@ -115,13 +114,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func subscribeToKeyboardNotifications() {
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
+    
     func unsubscribeFromKeyboardNotifications() {
-
+        
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -133,7 +132,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
     }
-
+    
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
         
         let userInfo = notification.userInfo
@@ -153,17 +152,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         activityController.completionWithItemsHandler = { activity, success, items, error in
             self.save()
             self.dismiss(animated: true, completion: nil)
-            self.goToInitialState()
+            self.goToInitialUIState()
         }
-                
+        
         present(activityController, animated: true, completion: nil)
     }
     
     @IBAction func Cancel_Click(_ sender: UIBarButtonItem) {
-        goToInitialState()
+        goToInitialUIState()
     }
     
-    func goToInitialState() {
+    func goToInitialUIState() {
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
         imagePickerView.image = nil
@@ -172,27 +171,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func generateMemedImage() -> UIImage {
-            
-            // Hide toolbar and navbar
-            toolBar.isHidden = true
-        topNavigationBar.isHidden = true
-       
-            // Render view to an image
-            UIGraphicsBeginImageContext(self.view.frame.size)
-            view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
-            let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-            UIGraphicsEndImageContext()
-            
-            // Show toolbar and navbar
-            toolBar.isHidden = false
-            topNavigationBar.isHidden = false
-
-            return memedImage
-        }
         
-        func save(){
-            // Create the meme
-            _ = MeMe(topText: topTextField.text!, bottomText:bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
-        }
+        // Hide toolbar and navbar
+        setToolBarSate(hidden: true)
+        
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        // Show toolbar and navbar
+        setToolBarSate(hidden: false)
+        
+        return memedImage
+    }
+    
+    func setToolBarSate(hidden: Bool){
+        toolBar.isHidden = hidden
+    }
+    
+    func save(){
+        // Create the meme
+        _ = MeMe(topText: topTextField.text!, bottomText:bottomTextField.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
+    }
 }
 
